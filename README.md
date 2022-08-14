@@ -8,7 +8,7 @@ I got around 800 movements with 100 numbers and around 7700 movements with 500 n
 If you have any doubt and want some help and tips just message me! 
 
 The rules
-• You have 2 stacks named a and b.
+• You have 2 stacks named a and b.\n
 • At the beginning:
 ◦ The stack a contains a random amount of negative and/or positive numbers
 which cannot be duplicated.
