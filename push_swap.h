@@ -6,7 +6,7 @@
 /*   By: acosta-a <acosta-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 07:44:23 by acosta-a          #+#    #+#             */
-/*   Updated: 2022/08/10 21:51:32 by acosta-a         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:54:01 by acosta-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@
 
 typedef struct s_stack
 {
-	int	*array_a;
-	int	*array_b;
-	int	size;
-	int	size_b;
-	int	move_count;
-	int	max_a;
-	int	min_a;
-	int	bucket_size;
-	int	check_double_ss;
-	int	check_double_rr;
-	int	check_double_rrr;
+	int				*array_a;
+	int				*array_b;
+	int				size;
+	int				size_b;
+	int				move_count;
+	long long int	max_a;
+	long long int	min_a;
+	long long int	bucket_size;
+	int				check_double_ss;
+	int				check_double_rr;
+	int				check_double_rrr;
+	int				null_check;
 }	t_stack;
 
 void	sa(t_stack *stack);

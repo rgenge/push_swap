@@ -6,7 +6,7 @@
 /*   By: acosta-a <acosta-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 07:44:05 by acosta-a          #+#    #+#             */
-/*   Updated: 2022/08/10 20:00:57 by acosta-a         ###   ########.fr       */
+/*   Updated: 2022/08/12 23:37:42 by acosta-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	sort_array_min_max(t_stack *stack, int i)
 
 void	sort_array(t_stack *stack)
 {
-	int	i;
-	int	size_init;
-	int	j;
+	int			i;
+	int			size_init;
+	long int	j;
 
 	j = 0;
 	i = -1;

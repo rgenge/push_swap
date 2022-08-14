@@ -6,7 +6,7 @@
 /*   By: acosta-a <acosta-a@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 07:44:08 by acosta-a          #+#    #+#             */
-/*   Updated: 2022/08/10 21:41:58 by acosta-a         ###   ########.fr       */
+/*   Updated: 2022/08/12 18:24:02 by acosta-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	ft_atoi_checker(const char *s, t_stack *stack)
 	sign = 1;
 	i = 0;
 	number = 0;
-	if (number == '0')
-		return (0);
 	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
 		i++;
 	if (s[i] == '+' || s[i] == '-')
@@ -33,7 +31,8 @@ int	ft_atoi_checker(const char *s, t_stack *stack)
 		number = number * 10 + (s[i] - '0');
 		i++;
 	}
-	if (number != 0 && number <= 2147483647 && number >= -2147483648)
+	if ((number != 0 && sign > 0 && number <= 2147483647) || (number != 0
+			&& sign < 0 && (number * sign) >= -2147483648))
 		return (number * sign);
 	free(stack->array_a);
 	free(stack->array_b);
@@ -50,7 +49,7 @@ int	error_msg(char *message)
 
 int	no_error_msg(t_stack *stack)
 {
-	if (stack->array_a[0])
+	if (stack->array_a && stack->array_a[0])
 	{
 		free(stack->array_a);
 		free(stack->array_b);
@@ -69,6 +68,7 @@ void	stack_init(t_stack *stack)
 	stack->bucket_size = 0;
 	stack->max_a = -2147483648;
 	stack->min_a = 2147483647;
+	stack->null_check = 0;
 }
 
 int	main(int argc, char **argv)
@@ -77,7 +77,7 @@ int	main(int argc, char **argv)
 
 	stack_init(&stack);
 	if (argc < 2)
-		no_error_msg(&stack);
+		exit(0);
 	treat_arg(argc, argv, &stack);
 	if (argc <= 6)
 		sort_small(&stack);
