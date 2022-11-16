@@ -1,6 +1,8 @@
 # push_swap
 Push swap is sorting algorithm project.
 
+If you want to test it compile it and them use type $ ARG='4 0 1 3 2'; ./push_swap $ARG . If you want to see the algorithm working you need to try the push swap visualizer.
+
 But in this project we have just a few restrictions to make it much more advanced than a simple sorting algorithm. 
 
 For this project I used the bucket sort algorithm to push everything from A to B.
